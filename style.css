@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: -webkit-fill-available;
+}
+
+#inputColor {
+  font-family: "Jersey 15", sans-serif !important;
+  background: none;
+  font-weight: 400;
+  font-style: normal;
+  height: 3rem;
+  width: 30rem;
+  border-radius: 1.2rem;
+  border: 1.5px solid;
+  font-size: x-large;
+  text-align: center;
+}
+
+#inputColor:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  #inputColor {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
