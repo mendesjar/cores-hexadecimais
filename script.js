@@ -18,17 +18,18 @@ window.addEventListener("DOMContentLoaded", () => {
     return L;
   };
 
-  let placeholderLuminance = getLuminance("#fff");
+  let placeholderLuminance = 0;
 
   function mudarPlaceHolder(color) {
     const backgroundLuminance = getLuminance(color);
 
     if (backgroundLuminance > placeholderLuminance) {
-      input.style.color = "#000";
+      input.style.color = "#000000";
+      placeholderLuminance = getLuminance("#000000");
     } else {
-      input.style.color = "#FFF";
+      input.style.color = "#FFFFFF";
+      placeholderLuminance = 0;
     }
-    placeholderLuminance = getLuminance(color);
   }
 
   const changeBackground = (e) => {
