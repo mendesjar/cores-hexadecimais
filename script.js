@@ -32,18 +32,16 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const changeBackground = (e) => {
-    const regex = /^[0-9a-fA-F]{6}$/;
-    const color = e.target.value;
-    if (!regex.test(color)) {
-      return (body[0].style.background = color);
+    if (e.target.value && e.target.value?.length === 6) {
+      const regex = /^[0-9a-fA-F]{6}$/;
+      const color = e.target.value;
+      if (!regex.test(color)) {
+        return (body[0].style.background = color);
+      }
+      body[0].style.background = `#${color}`;
+      mudarPlaceHolder(`#${color}`);
     }
-    body[0].style.background = `#${color}`;
-    mudarPlaceHolder(`#${color}`);
   };
-
-  function changeColors(e) {
-    changeBackground(e);
-  }
 
   const enablePlaceHolder = () => {
     if (document.body.clientWidth <= 600) {
@@ -53,6 +51,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  input.addEventListener("keyup", changeColors);
+  input.addEventListener("keyup", changeBackground);
   window.addEventListener("resize", enablePlaceHolder);
 });
